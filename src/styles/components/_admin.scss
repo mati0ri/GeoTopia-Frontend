@@ -1,0 +1,137 @@
+@import '../settings';
+
+
+
+.noQuiz {
+    color: $color-3;
+    margin-top: 5rem;
+
+
+}
+
+
+.adminpage {
+
+
+    .nav {
+        margin-bottom: 4rem;
+    }
+
+
+    .admin {
+
+        .questions {
+            background: linear-gradient(to bottom, $color-5, $color-6);
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+
+            h3 {
+                color: rgb(73, 225, 73);
+            }
+
+            h4 {
+                color: rgb(195, 12, 12);
+            }
+
+            h5 {
+                color: rgb(0, 0, 0);
+            }
+
+            .valider {
+                background-color: rgb(73, 225, 73);
+                border-radius: 4px;
+                border: 1px solid rgb(27, 156, 27);
+                font-family: $font-1;
+                transition: 0.2s;
+                color: rgb(15, 130, 15);
+
+
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.6);
+                    color: $color-3;
+                }
+            }
+
+            .supprimer {
+                background-color: rgb(233, 109, 109);
+                border-radius: 4px;
+                border: 1px solid rgb(187, 54, 54);
+                font-family: $font-1;
+                transition: 0.2s;
+                color: rgb(160, 35, 35);
+
+
+
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.6);
+                    color: $color-3;
+                }
+            }
+
+
+            select[name='category'],
+            select[name='difficulty'] {
+                margin-left: 0.5rem;
+                background-color: $color-7;
+                border: 1px solid #CCCCCC;
+                border-radius: 4px;
+                padding: 5px;
+                transition: 0.2s;
+                color: white;
+                font-family: $font-1;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.6);
+                    color: $color-3;
+                }
+            }
+
+            label,
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                //background-color: rgba(255, 255, 255, 0.3);
+                border-radius: 4px;
+                color: white;
+
+                input[type="text"] {
+                    background-color: rgba(255, 255, 255, 0.3);
+                    border: 1px solid #CCCCCC;
+                    /* Set the border color */
+                    border-radius: 4px;
+                    padding: 5px;
+                    transition: 0.2s;
+
+                    &::placeholder {
+                        color: rgba(255, 255, 255, 0.6);
+                        /* Set the placeholder text color */
+                        font-family: $font-1;
+                        /* Set any other styles for the placeholder */
+                    }
+
+                    &:hover {
+                        background-color: rgba(255, 255, 255, 0.6);
+                        color: $color-3;
+                    }
+                }
+            }
+
+            img {
+                height: 11rem;
+                max-width: 100%;
+                border-radius: 15px;
+                border: 2px solid $color-3;
+                background: $color-2;
+
+
+
+                //float: left;
+            }
+
+
+        }
+    }
+}

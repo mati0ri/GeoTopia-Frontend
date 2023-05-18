@@ -1,0 +1,95 @@
+@import '../settings';
+
+
+.statspage {
+
+    h2 {
+        margin-top: 4rem;
+        font-size: 1.5rem;
+        color: $color-2;
+    }
+
+    p {
+        color: $color-5;
+        font-size: 1rem;
+
+
+    }
+
+    h1 {
+        margin-top: 4rem;
+        color: $color-2;
+        font-size: 2rem;
+
+
+    }
+
+    .stats {
+
+        background: linear-gradient(to bottom, $color-7, $color-8);
+        border-radius: 10px;
+        margin-top: 1rem;
+
+
+        p {
+            color: rgb(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+
+        }
+
+        h3 {
+            color: rgb(255, 255, 255, 0.4);
+            font-size: 1rem;
+
+        }
+
+        .score {
+            background-color: rgb(255, 255, 255, 0.25);
+            border-radius: 8px;
+            font-size: 3rem;
+            color: $color-2;
+           
+            margin: 1.7rem;
+
+
+            .pourcent {
+                font-size: 1.5rem;
+                color: rgb(255, 255, 255, 0.4)
+            }
+        }
+
+        .titre {
+            background-color: rgb(255, 255, 255, 0.25);
+            border-radius: 8px;
+            font-size: 3rem;
+            color: $color-2;
+
+            margin: 1.7rem;
+
+
+            .username {
+                font-size: 3rem;
+                color: rgb(255, 255, 255, 0.4)
+            }
+
+        }
+
+        .classement {
+            background-color: rgb(255, 255, 255, 0.25);
+            border-radius: 8px;
+            font-size: 4rem;
+            color: $color-2;
+            
+            margin: 1.7rem;
+
+
+
+
+            .userCount {
+                font-size: 1.5rem;
+                color: rgb(255, 255, 255, 0.4)
+            }
+
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.logo {
+  //@include verticalCenter;
+  //margin: 5px auto;
+  /*box-shadow: 0 2px 3px rgba(0, 0, 0, 0.307);*/
+  /*background: url(../assets/img/main.jpg) center/cover;*/
+
+  img {
+    height: 16rem;
+  }
+  h3 {
+    color: $color-1;
+  }
+}

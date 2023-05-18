@@ -1,0 +1,92 @@
+@import '../settings';
+
+.gold-text {
+    color: gold;
+}
+
+.silver-text {
+    color: silver;
+}
+
+.bronze-text {
+    color: brown;
+    /* Couleur du bronze */
+}
+
+
+.pregamepage {
+
+    //background: linear-gradient(to bottom, $color-5, $color-6);
+
+
+    .infos {
+        margin-top: 3rem;
+        background: linear-gradient(to bottom, $color-7, $color-8);
+        backdrop-filter: blur(8px); // flou
+        border-radius: 8px;
+        padding: 10px;
+        width: fit-content;
+
+        h1 {
+            font-size: 3rem;
+            color: white;
+
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            color: rgb(255, 255, 255, 0.7);
+        }
+
+        h5 {
+            font-size: 1.2rem;
+            color: white;
+            margin-top: 1.5rem;
+
+        }
+
+
+
+        .lien {
+            display: grid;
+            //width: fit-content;
+            height: 20%;
+            background: linear-gradient(to bottom, $color-7, $color-8);
+            border: 2px solid rgb(255, 255, 255, 0.4);
+
+            font-size: 1.5em;
+            padding: 10px;
+            border-radius: 15px;
+            color: white;
+            text-decoration: none;
+            transition: 0.2s;
+
+            &:hover {
+                transform: scale(1.02);
+                background-color: $color-2;
+            }
+        }
+
+
+        .scores {
+            margin-top: 1.5rem;
+            background-color: rgb(255, 255, 255, 0.3);
+            border-radius: 8px;
+            //border: 1px solid rgb(255, 255, 255, 0.4);
+
+
+            h3 {
+                margin-top: 0.5rem;
+                margin-bottom: 0.5rem;
+                color: white;
+            }
+
+            h4 {
+                margin-top: 1rem;
+                margin-bottom: 0.5rem;
+                color: white;
+            }
+        }
+
+    }
+}

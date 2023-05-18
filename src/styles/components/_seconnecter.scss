@@ -1,0 +1,28 @@
+@import '../settings';
+
+
+.SeConnecter {
+    ul {
+        background-color: $color-7;
+        color: rgba(255, 255, 255);
+        width: fit-content;
+        border-radius: 10px;
+        padding: 0px 20px;
+        transition: 0.2s;
+
+
+
+        a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.9);
+
+            
+        }
+        &:hover {
+            transform: scale(1.05);
+            background-color: $color-8;
+
+            color: $color-2
+        }
+    }
+}

@@ -1,0 +1,83 @@
+.countries {
+  text-align: center;
+
+  .radio-container {
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    background: linear-gradient(to bottom, $color-5, $color-6);
+    backdrop-filter: blur(8px); // flou
+    border-radius: 15px;
+    padding: 10px;
+    color: $color-1;
+    transition: 0.2s;
+    /*box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.307);*/
+
+    input {
+      transform: translateY(1px);
+    }
+
+    label {
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    &:hover {
+      background: linear-gradient(to bottom, $color-7, $color-8);
+    }
+  }
+
+  input[type="text"] {
+    padding: 10px;
+    border-radius: 40px;
+    font-size: 1.3rem;
+    border: 3px solid $color-1;
+    outline: none;
+    transition: 0.4s;
+    text-align: center;
+    width: 400px;
+    margin-bottom: 20px;
+
+    &:focus {
+      background: $color-1;
+      border-radius: 4px;
+      color: $white;
+    }
+  }
+
+  button {
+    margin: 0 auto 20px;
+    background: linear-gradient(to bottom, $color-5, $color-6);
+    color: $color-1;
+    border: 1px solid $color-1;
+    padding: 4px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: $font-1;
+
+    &:hover {
+      background: $color-1;
+      color: $color-3;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cartes {
+    background: linear-gradient(to bottom, $color-5, $color-6);
+    border-radius: 10px;
+
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}

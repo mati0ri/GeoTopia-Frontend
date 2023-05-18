@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "font-1";
+  src: url(assets/fonts/Cunia.ttf);
+}
+
+$font-1: "font-1", sans-serif;
+
+$color-1: white;
+
+$color-2: rgb(124, 30, 148); //1pale
+$color-3: rgb(99, 25, 117);
+$color-4: rgb(167, 55, 195);
+$color-5: rgba(124, 30, 148, 0.25);
+$color-6: rgba(124, 30, 148, 0.45);
+$color-7: rgba(124, 30, 148, 0.6);
+$color-8: rgba(124, 30, 148, 0.8);
+
+
+$white: rgb(243, 243, 243);
+
+
+//$color-1: white;
+
+//$color-2: rgb(115, 20, 139);
+//$color-3: rgb(76, 13, 92);
+//$color-4: rgb(149, 27, 179);
+
+
+@mixin verticalCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  padding: 2px;
+  margin: 2px;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(../styles/assets/img/fond9.jpg);
+  //background-color: rgb(27, 27, 106);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  //background: $color-4;
+  font-family: $font-1;
+  // @include verticalCenter;
+}
+
+li {
+  list-style-type: none;
+}
