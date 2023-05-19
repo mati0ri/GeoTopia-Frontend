@@ -1,0 +1,44 @@
+@import '../settings';
+
+.bd {
+    margin-top: 4rem;
+
+    h1 {
+        color: $color-2;
+    }
+
+    h5 {
+        color: $color-7;
+        margin-bottom: 0.7rem;
+    }
+
+    .affichage {
+        background: linear-gradient(to bottom, $color-7, $color-8);
+        border-radius: 10px;
+
+        .id {
+            color: $color-6;
+        }
+
+        .lab {
+            color: $color-3;
+        }
+
+        .url {
+            font-size: 0.7rem;
+            color: rgb(255, 255, 255, 0.6);
+        }
+
+        p {
+            color: white;
+        }
+
+        img {
+            height: 11rem;
+            max-width: 100%;
+            border-radius: 15px;
+            border: 2px solid $color-3;
+            background: $color-2;
+        }
+    }
+}

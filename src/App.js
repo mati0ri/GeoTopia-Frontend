@@ -11,6 +11,7 @@ import InGamePage from './pages/InGamePage';
 import PropositionsPage from './pages/PropositionsPage';
 import Admin from './pages/Admin';
 import { useState, useEffect } from 'react';
+import BaseDonnée from './pages/BaseDonnée';
 
 
 const accessToken = localStorage.getItem('accessToken');
@@ -57,7 +58,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/stats" element={<PrivateRoute><About /></PrivateRoute>} />
+        
         <Route path="/admin" element={<AdminRoute><Admin /></AdminRoute>} />
+        <Route path="/bd" element={<AdminRoute><BaseDonnée /></AdminRoute>} />
+
         <Route path='/quiz' element={<PrivateRoute><ChoixModePage /></PrivateRoute>} />
         <Route path='/registration' element={<RegisterPage />} />
         <Route path='/login' element={<LogInPage />} />

@@ -69,8 +69,14 @@ const Navigation = () => {
                 )}
 
                 {role === "admin" && (
-                    <NavLink to="/admin" className={(nav) => (nav.isActive ? "nav-active" : "")}>
+                    <NavLink exact to="/admin" className={(nav) => (nav.isActive ? "nav-active" : "")}>
                         <li>admin</li>
+                    </NavLink>
+                )}
+
+                {role === "admin" && (
+                    <NavLink exact to="/bd" className={(nav) => (nav.isActive ? "nav-active" : "")}>
+                        <li>bd</li>
                     </NavLink>
                 )}
             </ul>
