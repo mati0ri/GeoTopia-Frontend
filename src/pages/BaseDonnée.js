@@ -47,7 +47,6 @@ const BaseDonnée = () => {
     };
 
     const fetchQuestions = async () => {
-        console.log(`https://geotopia-api.onrender.com/api/question/allFromCategory/${selectedCategory.toLowerCase()}`);
         try {
             const response = await fetch(`https://geotopia-api.onrender.com/api/question/allFromCategory/${selectedCategory.toLowerCase()}`, {
                 headers: {

@@ -21,7 +21,7 @@ const LogInComponent = () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': 'http://localhost:3000', // Autoriser le domaine d'origine
+                    'Access-Control-Allow-Origin': 'https://geotopia.onrender.com', // Autoriser le domaine d'origine
                 },
                 body: JSON.stringify({ email, encryptedPassword }),
             });
