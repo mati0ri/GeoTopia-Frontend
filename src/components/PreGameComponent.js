@@ -19,7 +19,7 @@ const PreGameComponent = () => {
 
     useEffect(() => {
         const fetchQuiz = async () => {
-            const response = await fetch(`http://localhost:3001/api/quiz/${id}`, {
+            const response = await fetch(`https://geotopia-api.onrender.com/api/quiz/${id}`, {
                 headers: {
                     Authorization: `Bearer ${accessToken}`
                 }
@@ -32,7 +32,7 @@ const PreGameComponent = () => {
 
     useEffect(() => {
         const fetchScores = async () => {
-            const response = await fetch(`http://localhost:3001/api/passage/quiz/${id}?limit=5`, {
+            const response = await fetch(`https://geotopia-api.onrender.com/api/passage/quiz/${id}?limit=5`, {
                 headers: {
                     Authorization: `Bearer ${accessToken}`
                 }
@@ -41,7 +41,7 @@ const PreGameComponent = () => {
 
             // Fetch titles for each user
             for (let score of data) {
-                const response = await fetch(`http://localhost:3001/api/user/title/${score.pseudo}`, {
+                const response = await fetch(`https://geotopia-api.onrender.com/api/user/title/${score.pseudo}`, {
                     headers: {
                         Authorization: `Bearer ${accessToken}`
                     }
@@ -57,7 +57,7 @@ const PreGameComponent = () => {
 
 
     const startQuiz = async () => {
-        const response = await fetch(`http://localhost:3001/api/question?category=${quiz.category}&limit=3`, {
+        const response = await fetch(`https://geotopia-api.onrender.com/api/question?category=${quiz.category}&limit=3`, {
             headers: {
                 Authorization: `Bearer ${accessToken}`
             }
@@ -69,7 +69,7 @@ const PreGameComponent = () => {
     useEffect(() => {
         // Appeler l'API /api/user/current pour récupérer les informations de l'utilisateur connecté
         const fetchUsername = async () => {
-            const response = await fetch('http://localhost:3001/api/user/current', {
+            const response = await fetch('https://geotopia-api.onrender.com/api/user/current', {
                 headers: {
                     Authorization: `Bearer ${accessToken}` // Ajouter l'accessToken dans le header d'autorisation
                 }
@@ -83,7 +83,7 @@ const PreGameComponent = () => {
     useEffect(() => {
         const fetchBestScore = async () => {
             if (username) {
-                const response = await fetch(`http://localhost:3001/api/passage/quiz/${id}/pseudo/${username}`, {
+                const response = await fetch(`https://geotopia-api.onrender.com/api/passage/quiz/${id}/pseudo/${username}`, {
                     headers: {
                         Authorization: `Bearer ${accessToken}`
                     }

@@ -17,7 +17,7 @@ const Admin = () => {
     useEffect(() => {
         const fetchQuestions = async () => {
             try {
-                const response = await fetch('http://localhost:3001/api/proposition', {
+                const response = await fetch('https://geotopia-api.onrender.com/api/proposition', {
                     headers: {
                         Authorization: `Bearer ${accessToken}`
                     }
@@ -42,7 +42,7 @@ const Admin = () => {
 
         const fetchQuizCategories = async () => {
             try {
-                const response = await fetch('http://localhost:3001/api/quiz', {
+                const response = await fetch('https://geotopia-api.onrender.com/api/quiz', {
                     headers: {
                         Authorization: `Bearer ${accessToken}`
                     }
@@ -74,7 +74,7 @@ const Admin = () => {
         const question = questions[index];
         setQuestionStatuses(prevStatuses => ({ ...prevStatuses, [question._id]: 'submitting' }));
         try {
-            const response = await fetch('http://localhost:3001/api/question', {
+            const response = await fetch('https://geotopia-api.onrender.com/api/question', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -90,7 +90,7 @@ const Admin = () => {
             const data = await response.json();
             setQuestionStatuses(prevStatuses => ({ ...prevStatuses, [question._id]: 'submitted' }));
 
-            const deleteResponse = await fetch(`http://localhost:3001/api/proposition/${question._id}`, {
+            const deleteResponse = await fetch(`https://geotopia-api.onrender.com/api/proposition/${question._id}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${accessToken}`
@@ -110,7 +110,7 @@ const Admin = () => {
         const question = questions[index];
         setQuestionStatuses(prevStatuses => ({ ...prevStatuses, [question._id]: 'deleting' }));
         try {
-            const response = await fetch(`http://localhost:3001/api/proposition/${question._id}`, {
+            const response = await fetch(`https://geotopia-api.onrender.com/api/proposition/${question._id}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${accessToken}`

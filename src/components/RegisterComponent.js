@@ -28,7 +28,7 @@ const RegisterComponent = () => {
 
     // Faire une requête POST vers l'API pour l'enregistrement de l'utilisateur
     try {
-      const response = await fetch('http://localhost:3001/api/user/register', {
+      const response = await fetch('https://geotopia-api.onrender.com/api/user/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

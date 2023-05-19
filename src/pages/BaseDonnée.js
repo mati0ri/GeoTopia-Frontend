@@ -28,7 +28,7 @@ const BaseDonnée = () => {
 
     const fetchQuizCategories = async () => {
         try {
-            const response = await fetch('http://localhost:3001/api/quiz', {
+            const response = await fetch('https://geotopia-api.onrender.com/api/quiz', {
                 headers: {
                     Authorization: `Bearer ${accessToken}`
                 }
@@ -47,9 +47,9 @@ const BaseDonnée = () => {
     };
 
     const fetchQuestions = async () => {
-        console.log(`http://localhost:3001/api/question/allFromCategory/${selectedCategory.toLowerCase()}`);
+        console.log(`https://geotopia-api.onrender.com/api/question/allFromCategory/${selectedCategory.toLowerCase()}`);
         try {
-            const response = await fetch(`http://localhost:3001/api/question/allFromCategory/${selectedCategory.toLowerCase()}`, {
+            const response = await fetch(`https://geotopia-api.onrender.com/api/question/allFromCategory/${selectedCategory.toLowerCase()}`, {
                 headers: {
                     Authorization: `Bearer ${accessToken}`
                 }
@@ -69,7 +69,7 @@ const BaseDonnée = () => {
 
     const deleteQuestion = async (id) => {
         try {
-            const response = await fetch(`http://localhost:3001/api/question/${id}`, {
+            const response = await fetch(`https://geotopia-api.onrender.com/api/question/${id}`, {
                 method: 'DELETE',
                 headers: {
                     Authorization: `Bearer ${accessToken}`
@@ -95,7 +95,7 @@ const BaseDonnée = () => {
         event.preventDefault();
 
         try {
-            const response = await fetch(`http://localhost:3001/api/question/${editingQuestionId}`, {
+            const response = await fetch(`https://geotopia-api.onrender.com/api/question/${editingQuestionId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -157,7 +157,7 @@ const BaseDonnée = () => {
 
     const addQuestion = async () => {
         try {
-            const response = await fetch('http://localhost:3001/api/question', {
+            const response = await fetch('https://geotopia-api.onrender.com/api/question', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

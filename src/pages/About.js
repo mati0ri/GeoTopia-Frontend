@@ -27,7 +27,7 @@ const About = () => {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const response = await fetch('http://localhost:3001/api/user/current', {
+                const response = await fetch('https://geotopia-api.onrender.com/api/user/current', {
                     headers: {
                         Authorization: `Bearer ${accessToken}`
                     }
@@ -53,7 +53,7 @@ const About = () => {
         // Ne faire l'appel à l'API que si l'id est défini
         if (id) {
             // Appeler l'API /api/user/ranking pour récupérer le classement de l'utilisateur connecté
-            fetch(`http://localhost:3001/api/user/ranking/${id}`, {
+            fetch(`https://geotopia-api.onrender.com/api/user/ranking/${id}`, {
                 headers: {
                     Authorization: `Bearer ${accessToken}` // Ajouter l'accessToken dans le header d'autorisation
                 }
@@ -73,7 +73,7 @@ const About = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:3001/api/user/count')
+        fetch('https://geotopia-api.onrender.com/api/user/count')
             .then(response => response.json())
             .then(data => { setUserCount(data.count); setLoadingUserCount(false) })
             .catch(error => console.error('Erreur lors de la récupération du nombre d\'utilisateurs:', error));
@@ -83,7 +83,7 @@ const About = () => {
 
     useEffect(() => {
         if (username) {
-            fetch(`http://localhost:3001/api/passage/${username}`, {
+            fetch(`https://geotopia-api.onrender.com/api/passage/${username}`, {
                 headers: {
                     Authorization: `Bearer ${accessToken}`
                 }
@@ -109,7 +109,7 @@ const About = () => {
         const updateTotalScore = async () => {
             if (id) { // Ne faire l'appel API que si l'id est défini
                 try {
-                    await fetch(`http://localhost:3001/api/user/updateScore/${id}`, {
+                    await fetch(`https://geotopia-api.onrender.com/api/user/updateScore/${id}`, {
                         method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json',
@@ -156,7 +156,7 @@ const About = () => {
                 }
     
                 try {
-                    await fetch(`http://localhost:3001/api/user/updateTitre/${id}`, {
+                    await fetch(`https://geotopia-api.onrender.com/api/user/updateTitre/${id}`, {
                         method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json',

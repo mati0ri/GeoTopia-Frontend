@@ -23,7 +23,7 @@ const InGamePage = () => {
     useEffect(() => {
         //va chercher les infos du quiz, on y accede par quiz.category par exemple
         const fetchQuiz = async () => {
-            const response = await fetch(`http://localhost:3001/api/quiz/${id}`, {
+            const response = await fetch(`https://geotopia-api.onrender.com/api/quiz/${id}`, {
                 headers: {
                     Authorization: `Bearer ${accessToken}`
                 }
@@ -44,7 +44,7 @@ const InGamePage = () => {
                 let fetchedQuestions = [];
 
                 for (let i = 0; i < difficulties.length; i++) {
-                    const response = await fetch(`http://localhost:3001/api/question/category/${quiz.category.toLowerCase()}/difficulty/${difficulties[i]}?limit=${limits[i]}`, {
+                    const response = await fetch(`https://geotopia-api.onrender.com/api/question/category/${quiz.category.toLowerCase()}/difficulty/${difficulties[i]}?limit=${limits[i]}`, {
                         headers: {
                             Authorization: `Bearer ${accessToken}`
                         }
@@ -71,7 +71,7 @@ const InGamePage = () => {
 
     useEffect(() => {
         const fetchBestScore = async () => {
-            const response = await fetch(`http://localhost:3001/api/passage/quiz/${id}/pseudo/${username}`, {
+            const response = await fetch(`https://geotopia-api.onrender.com/api/passage/quiz/${id}/pseudo/${username}`, {
                 headers: {
                     Authorization: `Bearer ${accessToken}`
                 }
@@ -93,7 +93,7 @@ const InGamePage = () => {
 
     useEffect(() => {
         // Appeler l'API /api/user/current pour récupérer les informations de l'utilisateur connecté
-        fetch('http://localhost:3001/api/user/current', {
+        fetch('https://geotopia-api.onrender.com/api/user/current', {
             headers: {
                 Authorization: `Bearer ${accessToken}` // Ajouter l'accessToken dans le header d'autorisation
             }
@@ -127,7 +127,7 @@ const InGamePage = () => {
             setGameOver(true);
             if (Math.round((liveScore / questions.length) * 100) > bestScore) {
                 console.log("1");
-                fetch(`http://localhost:3001/api/passage/quiz/${id}/pseudo/${username}`, {
+                fetch(`https://geotopia-api.onrender.com/api/passage/quiz/${id}/pseudo/${username}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',

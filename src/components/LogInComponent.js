@@ -17,7 +17,7 @@ const LogInComponent = () => {
 
         // Faire une requête POST vers l'API pour l'enregistrement de l'utilisateur
         try {
-            const response = await fetch('http://localhost:3001/api/user/login', {
+            const response = await fetch('https://geotopia-api.onrender.com/api/user/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

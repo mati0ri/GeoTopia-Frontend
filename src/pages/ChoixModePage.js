@@ -10,7 +10,7 @@ const ChoixModePage = () => {
 
     useEffect(() => {
         const fetchQuizzes = async () => {
-            const response = await fetch('http://localhost:3001/api/quiz', {
+            const response = await fetch('https://geotopia-api.onrender.com/api/quiz', {
                 headers: {
                     Authorization: `Bearer ${accessToken}`
                 }

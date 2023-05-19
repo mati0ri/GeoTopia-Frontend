@@ -26,7 +26,7 @@ const PropositionsPage = () => {
         const data = { question, answer, image, wrongAnswers: [text3, text4, text5] };
 
         try {
-            const response = await fetch('http://localhost:3001/api/proposition', {
+            const response = await fetch('https://geotopia-api.onrender.com/api/proposition', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

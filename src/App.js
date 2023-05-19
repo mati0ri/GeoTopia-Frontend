@@ -35,7 +35,7 @@ const App = () => {
 
   useEffect(() => {
     // Appeler l'API /api/user/current pour récupérer les informations de l'utilisateur connecté
-    fetch('http://localhost:3001/api/user/current', {
+    fetch('https://geotopia-api.onrender.com/api/user/current', {
       headers: {
         Authorization: `Bearer ${accessToken}` // Ajouter l'accessToken dans le header d'autorisation
       }
@@ -58,7 +58,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/stats" element={<PrivateRoute><About /></PrivateRoute>} />
-        
+
         <Route path="/admin" element={<AdminRoute><Admin /></AdminRoute>} />
         <Route path="/bd" element={<AdminRoute><BaseDonnée /></AdminRoute>} />
 
