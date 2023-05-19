@@ -32,7 +32,7 @@ const LogInComponent = () => {
                 localStorage.setItem('accessToken', accessToken);
                 console.log(accessToken);
                 // Rediriger vers la page home si l'enregistrement est réussi
-                window.location.href = '/home';
+                window.location.href = '/';
             } else {
                 // Afficher une erreur si l'enregistrement échoue
                 const data = await response.json();
