@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import BoutonQuiz from '../components/Boutons/BoutonQuiz';
+import Navigation from '../components/Navigation';
 import '../styles/components/_ingamepage.scss';
 
 const InGamePage = () => {
@@ -154,15 +155,19 @@ const InGamePage = () => {
         } else {
             if (recordBroken) {
                 return (
-                    <div>
-                        Fin du quiz ! Bien joué, tu as amélioré ton record : {bestScore}%
+                    <div className='fin'>
+                        <Navigation />
+                        <h1>Fin du quiz !</h1> 
+                        <h2><span className='record'>nouveau record</span> {bestScore}<span className='pourcent'>%</span></h2>
                         <BoutonQuiz text="Choisir un nouveau Quiz" />
                     </div>
                 );
             } else {
                 return (
-                    <div>
-                        Fin du quiz ! Score : {Math.round((liveScore / questions.length) * 100)}%
+                    <div className='fin'>
+                        <Navigation />
+                        <h1>Fin du quiz !</h1> 
+                        <h2><span className='normal'>Tu as fait un score de </span>{Math.round((liveScore / questions.length) * 100)}<span className='pourcent'>%</span></h2>
                         <BoutonQuiz text="Choisir un nouveau Quiz" />
                     </div>
                 );

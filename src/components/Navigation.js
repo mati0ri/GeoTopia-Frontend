@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 //import jwt_decode from "jsonwebtoken";
 import { useState, useEffect } from 'react';
 
+import logo from '../assets/logo.png';
+
 
 
 
@@ -35,7 +37,7 @@ const Navigation = () => {
     return (
         <div className="navigation">
             <ul>
-                <img src="./logo.png" alt="logo geotopia" className='logo' />
+                <img src={logo} alt="logo geotopia" className='logo' />
 
                 {accessToken && (
                     <NavLink to="/" className={(nav) => (nav.isActive ? "nav-active" : "")}>

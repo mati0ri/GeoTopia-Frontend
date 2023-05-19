@@ -1,6 +1,35 @@
 @import '../settings';
 
 
+
+.fin {
+
+    background: linear-gradient(to bottom, $color-5, $color-6);
+    border-radius: 10px;
+    margin-top: 6rem;
+
+    h1 {
+        font-size: 4rem;
+        color: $color-2;
+    }
+
+    .record, .pourcent, .normal {
+        color: rgb(255, 255, 255, 0.6);
+        
+        font-size: 2rem;
+    }
+
+
+
+    h2 {
+        font-size: 5rem;
+        color: $color-2;
+
+    }
+
+}
+
+
 .question {
 
     .entete {
