@@ -38,7 +38,7 @@ const RegisterComponent = () => {
       });
       if (response.ok) {
         // Rediriger vers la page de connexion si l'enregistrement est réussi
-        window.location.href = '/login';
+        window.location.href = '/';
       } else {
         // Afficher une erreur si l'enregistrement échoue
         const data = await response.json();
