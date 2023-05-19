@@ -16,7 +16,7 @@ const Navigation = () => {
 
     useEffect(() => {
         if (accessToken) {
-            fetch('https://geotopia-api.onrender.com//api/user/current', {
+            fetch('https://geotopia-api.onrender.com/api/user/current', {
                 headers: {
                     Authorization: `Bearer ${accessToken}`
                 }
