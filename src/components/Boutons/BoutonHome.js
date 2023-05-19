@@ -7,7 +7,7 @@ const BoutonHome = () => {
     return (
         <div>
             <div className="bouton">
-                <Link to={'/home'} style={{ textDecoration: 'none', color: 'black' }}>
+                <Link to={'/'} style={{ textDecoration: 'none', color: 'black' }}>
                     <h1>retour accueil</h1>
                 </Link>
             </div>

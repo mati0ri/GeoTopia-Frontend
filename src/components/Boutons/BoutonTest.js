@@ -7,7 +7,7 @@ const BoutonTest = () => {
     return (
         <div>
             <div className="bouton">
-                <NavLink to={'/home'} style={{ textDecoration: 'none', color: 'black' }}>
+                <NavLink to={'/'} style={{ textDecoration: 'none', color: 'black' }}>
                     <p>retour accueil</p>
                 </NavLink>
             </div>

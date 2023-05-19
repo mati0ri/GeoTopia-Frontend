@@ -11,7 +11,7 @@ const HandleClick = (e) => {
     // Remove the access token from local storage
     localStorage.removeItem('accessToken');
     // Redirect the user to the home page or login page
-    window.location.href = '/home';
+    window.location.href = '/';
 };
 
 
