@@ -17,6 +17,9 @@ const InGamePage = () => {
     const [lives, setLives] = useState(3);
     const [gameOver, setGameOver] = useState(false);
     const [recordBroken, setRecordBroken] = useState(false);
+    const [selectedAnswer, setSelectedAnswer] = useState(null);
+    const [isAnswerCorrect, setIsAnswerCorrect] = useState(false);
+
 
     const accessToken = localStorage.getItem('accessToken');
 
@@ -50,8 +53,14 @@ const InGamePage = () => {
                         }
                     });
                     const data = await response.json();
+                    data.forEach(question => {
+                        // Mélanger les réponses ici
+                        question.mixedAnswers = [question.answer, ...question.wrongAnswers].sort(() => Math.random() - 0.5);
+                    });
                     fetchedQuestions = fetchedQuestions.concat(data);
                 }
+
+
                 setQuestions(fetchedQuestions); //la liste des questions desormais accessible dans la variables questions
             }
         };
@@ -60,14 +69,24 @@ const InGamePage = () => {
 
     const handleAnswerClick = (answer) => {
         const currentQuestion = questions[currentQuestionIndex];
+        setSelectedAnswer(answer);
         if (answer === currentQuestion.answer) {
             setliveScore(liveScore + 1);
+            setIsAnswerCorrect(true);
         } else {
-            setMistakes(mistakes + 1);
-            setLives(lives - 1);
+            setIsAnswerCorrect(false);
         }
-        setCurrentQuestionIndex(currentQuestionIndex + 1);
+        // Attendez quelques secondes avant de passer à la question suivante pour que l'utilisateur puisse voir la bonne réponse
+        setTimeout(() => {
+            setCurrentQuestionIndex(currentQuestionIndex + 1);
+            setSelectedAnswer(null);  // Réinitialisez la réponse sélectionnée
+            if (answer !== currentQuestion.answer) {
+                setMistakes(mistakes + 1);
+                setLives(lives - 1);
+            }
+        }, 1500);
     };
+
 
     useEffect(() => {
         const fetchBestScore = async () => {
@@ -122,7 +141,7 @@ const InGamePage = () => {
         return <div>Chargement du quiz...</div>;
     }
 
-    if (currentQuestionIndex >= questions.length || lives <= 0) {
+    if (currentQuestionIndex >= questions.length || mistakes >= 3) {
         if (!gameOver) {
             setGameOver(true);
             if (Math.round((liveScore / questions.length) * 100) > bestScore) {
@@ -157,7 +176,7 @@ const InGamePage = () => {
                 return (
                     <div className='fin'>
                         <Navigation />
-                        <h1>Fin du quiz !</h1> 
+                        <h1>Fin du quiz !</h1>
                         <h2><span className='record'>nouveau record</span> {bestScore}<span className='pourcent'>%</span></h2>
                         <BoutonQuiz text="Choisir un nouveau Quiz" />
                     </div>
@@ -166,7 +185,7 @@ const InGamePage = () => {
                 return (
                     <div className='fin'>
                         <Navigation />
-                        <h1>Fin du quiz !</h1> 
+                        <h1>Fin du quiz !</h1>
                         <h2><span className='normal'>Tu as fait un score de </span>{Math.round((liveScore / questions.length) * 100)}<span className='pourcent'>%</span></h2>
                         <BoutonQuiz text="Choisir un nouveau Quiz" />
                     </div>
@@ -180,9 +199,12 @@ const InGamePage = () => {
     if (currentQuestionIndex >= questions.length || lives <= 0 || gameOver) {
         return null;
     }
-
     const currentQuestion = questions[currentQuestionIndex];
-    const answers = [currentQuestion.answer, ...currentQuestion.wrongAnswers].sort(() => Math.random() - 0.5);
+    const answers = currentQuestion.mixedAnswers;
+
+    const color1 = 'rgb(124, 30, 148)';
+    const color2 = 'rgba(124, 30, 148, 0.8)';
+
 
     return (
 
@@ -211,11 +233,25 @@ const InGamePage = () => {
 
                 <div className="answer-options">
                     {answers.map((answer) => (
-                        <button key={answer} onClick={() => handleAnswerClick(answer)}>
+                        <button
+                            key={answer}
+                            onClick={() => handleAnswerClick(answer)}
+                            style={{
+                                backgroundColor:
+                                    selectedAnswer
+                                        ? answer === currentQuestion.answer
+                                            ? 'rgb(45, 192, 79)'  // La bonne réponse, une fois que l'utilisateur a fait son choix
+                                            : selectedAnswer === answer
+                                                ? 'rgb(216, 61, 61)'       // La réponse sélectionnée par l'utilisateur était incorrecte
+                                                : 'rgb(134, 30, 148)'  // Les autres réponses non sélectionnées
+                                        : 'rgb(124, 30, 148)'      // Avant que l'utilisateur n'ait fait son choix
+                            }}
+                        >
                             {answer}
                         </button>
                     ))}
                 </div>
+
 
             </div>
 

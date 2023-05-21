@@ -84,7 +84,7 @@
                 font-family: $font-1;
                 font-size: 20px;
                 margin-right: 10px;
-                background: linear-gradient(to bottom, $color-7, $color-8);
+                //background: linear-gradient(to bottom, $color-7, $color-8);
                 color: $color-1;
                 border: 3px solid $color-3;
                 padding: 4px 10px;
@@ -97,8 +97,10 @@
 
                 &:hover {
                     background: rgb(255, 255, 255, 0.8);
-                    color: $color-3;
-                    transform: scale(1.1);
+                    color: $color-1;
+                    transform: scale(1.05);
+                    //border: 3px solid rgb(255, 255, 255, 0.5);
+
                 }
             }
         }

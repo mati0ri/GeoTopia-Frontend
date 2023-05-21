@@ -1,26 +1,36 @@
 @import '../settings';
 
+
+
+
+
 .navigation {
+
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 9999; // Set a high z-index value
+
   ul {
     display: flex;
-    margin-top: 0px;
-    width: 1300px;
     height: 75px;
-    position: fixed;
     font-size: 1rem;
-    top: 0;
-    left: -3px;
-    /*box-shadow: 0 2px 3px rgba(0, 0, 0, 0.307);*/
+    margin: 0;
+    padding: 0;
     background-color: $color-2;
     transition: 0.2s;
-    z-index: 9999; /* Set a high z-index value */
+    overflow-x: auto; // Add horizontal scrolling
 
 
 
     .logo {
       margin: 7px;
       height: 3.5rem;
-      max-width: 100%;    }
+      max-width: 100%;
+    }
 
     a {
       text-decoration: none;
