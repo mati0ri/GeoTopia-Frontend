@@ -151,8 +151,11 @@ const About = () => {
                 else if (totalScore < 799) {
                     nouveauTitre = "la supernova";
                 }
-                else {
+                else if (totalScore === 800) {
                     nouveauTitre = "le trou noir";
+                }
+                else {
+                    nouveauTitre = "la tricheuse";
                 }
     
                 try {
