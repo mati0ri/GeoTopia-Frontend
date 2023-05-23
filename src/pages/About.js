@@ -18,6 +18,7 @@ const About = () => {
     const [loadingRanking, setLoadingRanking] = useState(true);
     const [loadingUserCount, setLoadingUserCount] = useState(true);
     const [loadingPassages, setLoadingPassages] = useState(true);
+
     const [updateTotalScore, setupdateTotalScore] = useState(true);
     const [updateTitre, setupdateTitre] = useState(true);
 
@@ -33,7 +34,6 @@ const About = () => {
                     }
                 });
                 const data = await response.json();
-                console.log(data); // Ajouté pour déboguer
 
                 setUsername(data.username);
                 //setTitre(data.titre);
@@ -183,7 +183,6 @@ const About = () => {
 
 
     if (loadingUserData || loadingRanking || loadingUserCount || loadingPassages || updateTotalScore || updateTitre) {
-        //console.log(loadingUserData, loadingRanking, loadingUserCount, loadingPassages, updateTotalScore, updateTitre);
         return <div className='statspage'>
             <Navigation />
             <h2>Chargement des informations... <br /></h2>
@@ -192,7 +191,6 @@ const About = () => {
         </div>;
     }
 
-    //console.log(loadingUserData, loadingRanking, loadingUserCount, loadingPassages, updateTotalScore, updateTitre);
 
     return (
         <div className='statspage'>
