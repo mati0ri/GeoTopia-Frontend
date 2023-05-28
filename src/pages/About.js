@@ -45,7 +45,7 @@ const About = () => {
             }
         };
         fetchUserData();
-    }, [scoreTot, titre]);
+    }, []);
 
 
 
@@ -168,12 +168,10 @@ const About = () => {
                         body: JSON.stringify({ titre: nouveauTitre })
                     });
                     setTitre(nouveauTitre);
-                    console.log(nouveauTitre);
                 } catch (error) {
                     console.error('Erreur lors de la mise à jour du titre:', error);
                 } finally {
                     setupdateTitre(false);
-                    console.log("dd",updateTitre);
                 }
             }
         };
