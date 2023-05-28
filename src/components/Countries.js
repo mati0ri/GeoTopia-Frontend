@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import Card from './Card';
+import countriesData from './countries.json'; // assuming countries.json is in the same directory
 
 const Countries = () => {
 
@@ -10,7 +10,7 @@ const Countries = () => {
     const radios = ["Africa", "America", "Asia", "Europe", "Oceania"];
 
     useEffect(() => {
-        axios.get("https://restcountries.com/v3.1/all").then((res) => setData(res.data));
+        setData(countriesData);
     }, []);
 
     return (
