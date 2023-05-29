@@ -73,12 +73,16 @@
 
             margin: 1.7rem;
             transition: 0.2s;
-
+            @media (max-width: 600px) {
+                // Les styles pour les téléphones vont ici...
+                font-size: 2.5rem; // Changez la taille selon vos besoins
+            }
 
 
             .username {
                 font-size: 3rem;
                 color: rgb(255, 255, 255, 0.4)
+                
             }
 
             &:hover {

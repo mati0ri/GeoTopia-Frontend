@@ -70,6 +70,11 @@
             margin-left: 1.5%;
             color: $color-3;
 
+            @media (max-width: 600px) {
+                // Les styles pour les téléphones vont ici...
+                font-size: 0.8rem; // Changez la taille selon vos besoins
+            }
+
         }
 
         img {
@@ -81,6 +86,11 @@
             border-radius: 15px;
             border: 2px solid $color-3;
             background: $color-2;
+
+            @media (max-width: 600px) {
+                // Les styles pour les téléphones vont ici...
+                height: 10rem; // Changez la taille selon vos besoins
+            }
 
 
             //float: left;
@@ -110,6 +120,15 @@
                 min-width: 150px; // Largeur minimale pour que les boutons aient la même taille
                 min-height: 70px; // Hauteur minimale pour que les boutons aient la même taille
 
+                @media (max-width: 600px) {
+                    // Les styles pour les téléphones vont ici...
+                    margin: 0 auto 10px;
+
+                    font-size: 1rem; // Changez la taille selon vos besoins
+                    min-width: 120px; // Largeur minimale pour que les boutons aient la même taille
+                    min-height: 60px; // Hauteur minimale pour que les boutons aient la même taille
+                }
+
 
                 &:hover {
                     background: rgb(255, 255, 255, 0.8);
@@ -133,6 +152,12 @@
 
             color: white;
 
+            @media (max-width: 600px) {
+                // Les styles pour les téléphones vont ici...
+                font-size: 1rem; // Changez la taille selon vos besoins
+            }
+            
+
 
             p {
                 margin-left: 0.5rem;
@@ -145,6 +170,10 @@
                 margin-right: 0.5rem;
                 margin-top: 0.5rem;
                 font-size: 2.5rem;
+                @media (max-width: 600px) {
+                    // Les styles pour les téléphones vont ici...
+                    font-size: 1.5rem; // Changez la taille selon vos besoins
+                }
             }
 
         }
