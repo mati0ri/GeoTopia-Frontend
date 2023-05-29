@@ -46,8 +46,7 @@ const Home = () => {
             <div className='accueil' style={{ marginTop: '5rem' }}>
                 <Navigation />
                 <div className='nom2' style={{ marginTop: '24rem' }}>chargement</div>
-                <div className='info'>Il arrive que la récupération de données soit assez longue<br />n'hésitez pas à vous reconnecter, ce sera plus rapide</div>
-                <SeDeconnecter />
+                <div className='info'>Il arrive que la récupération de données<br />soit assez longue, désolé</div>
             </div>
         )
     }
