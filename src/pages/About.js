@@ -183,7 +183,7 @@ const About = () => {
     if (loadingUserData || loadingRanking || loadingUserCount || loadingPassages || updateTotalScore || updateTitre) {
         return <div className='statspage'>
             <Navigation />
-            <h2>Chargement des informations... <br /></h2>
+            <h1>Chargement des informations... <br /></h1>
             <p>(si tu n'as jamais joué, reviens après ta première partie</p>
             <p>sinon, recharge la page)</p>
         </div>;

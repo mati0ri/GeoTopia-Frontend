@@ -1,4 +1,6 @@
+import { dialogClasses } from '@mui/material';
 import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import BoutonQuiz from '../components/Boutons/BoutonQuiz';
 import Navigation from '../components/Navigation';
@@ -10,7 +12,7 @@ const InGamePage = () => {
     const [quiz, setQuiz] = useState(null);
     const [bestScore, setBestScore] = useState(0);
     const [username, setUsername] = useState(null);
-    const [questions, setQuestions] = useState([]);
+    const [questions, setQuestions] = useState(null);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [liveScore, setliveScore] = useState(0);
     const [mistakes, setMistakes] = useState(0);
@@ -136,9 +138,32 @@ const InGamePage = () => {
 
 
 
-    if (!quiz || questions.length === 0) {
+    if (!quiz || !questions) {
         // chargement des questions 
-        return <div>Chargement du quiz...</div>;
+        return (
+            <div className='chargement'>
+                <Navigation />
+                <h1 style={{ marginTop: '6rem' }}>Chargement du quiz...</h1>
+            </div>
+        )
+    }
+
+    if (questions && questions.length === 0) {
+        return (
+            <div className='noQuestion'>
+                <Navigation />
+                <div className='oo' style={{ marginTop: '6rem' }}>
+
+
+                    <h1 >Pas encore de question disponible pour ce Quiz ...</h1>
+                    <NavLink to="/proposition">
+                        <p>propose nous ta question !</p>
+                    </NavLink>
+                    <BoutonQuiz text="Quitter" />
+                </div>
+            </div>
+        )
+
     }
 
     if (currentQuestionIndex >= questions.length || mistakes >= 3) {

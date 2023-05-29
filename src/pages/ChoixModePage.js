@@ -26,7 +26,7 @@ const ChoixModePage = () => {
         <div style={{ marginTop: '80px' }} className='page'>
             <Navigation />
             {loading ? ( // Affichage de l'écran de chargement si l'état de chargement est true
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80vh', color: 'white' }}>
                     <p>Chargement des quiz...</p>
                 </div>
             ) : ( // Sinon, affichage des quiz

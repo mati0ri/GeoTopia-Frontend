@@ -58,13 +58,13 @@ const Home = () => {
             {!username && <SeConnecter />}
 
 
-            <div className='home' style={{ marginTop: '24rem' }}>
+            <div className='home' style={{ marginTop: '55vh' }}>
 
                 {/*<Logo />*/}
 
                 {username && <div className='nom'>Bonjour {username}...</div>}
                 {username && <div className='nom2'>bienvenue dans géotopia</div>}
-                {username && <div className='info'>Une plateforme de quiz ludique basée<br /> principalement sur des jeux géographiques</div>}
+                {username && <div className='info'>Une plateforme de quiz ludique basée<br />sur des jeux géographiques</div>}
                 {username && <SeDeconnecter />}
 
                 {/*email && <div className='infos'>Ton email : {email}</div>*/}

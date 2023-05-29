@@ -100,7 +100,14 @@ const PreGameComponent = () => {
 
 
     if (!quiz) {
-        return <div><h1>Chargement des informations...</h1><BoutonQuiz /></div>
+
+
+        return (
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80vh', color: 'white' }}>
+            <Navigation />
+            <h1>Chargement des informations...</h1>
+            <BoutonQuiz />
+        </div>)
     };
 
     return (
@@ -116,14 +123,14 @@ const PreGameComponent = () => {
                 <div className='scores'>
 
                     <h3>Classement : </h3>
-                    {!scores && <p>Chargement des scores...</p>}
+                    {!scores && <div className='white-text'>Chargement des scores...</div>}
                     {scores && scores.map((score, index) => (
                         <div key={index}>
                             <p className={
                                 index === 0 ? "gold-text"
                                     : index === 1 ? "silver-text"
                                         : index === 2 ? "bronze-text"
-                                            : ""}
+                                            : "white-text"}
                             >
                                 {index === 0 ? <span role="img" aria-label="gold-medal">🥇</span>
                                     : index === 1 ? <span role="img" aria-label="silver-medal">🥈</span>

@@ -1,6 +1,20 @@
 @import '../settings';
 
 
+.chargement {
+    h1 {
+        color: $color-2;
+    }
+}
+
+.noQuestion {
+    .oo {
+        color: $color-2;
+        background: linear-gradient(to bottom, $color-5, $color-6);
+        border-radius: 10px;
+    }
+
+}
 
 .fin {
 
@@ -13,9 +27,11 @@
         color: $color-2;
     }
 
-    .record, .pourcent, .normal {
+    .record,
+    .pourcent,
+    .normal {
         color: rgb(255, 255, 255, 0.6);
-        
+
         font-size: 2rem;
     }
 
@@ -65,7 +81,7 @@
             border-radius: 15px;
             border: 2px solid $color-3;
             background: $color-2;
-         
+
 
             //float: left;
         }
