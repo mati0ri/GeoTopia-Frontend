@@ -30,6 +30,10 @@
       margin: 7px;
       height: 3.5rem;
       max-width: 100%;
+      transition: 0.2s;
+      &:hover {
+        transform: scale(1.1);
+      }
     }
 
     a {
