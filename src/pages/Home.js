@@ -46,6 +46,7 @@ const Home = () => {
             <div className='accueil' style={{ marginTop: '5rem' }}>
                 <Navigation />
                 <div className='nom2' style={{ marginTop: '24rem' }}>chargement</div>
+                <SeDeconnecter />
             </div>
         )
     }
